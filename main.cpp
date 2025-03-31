@@ -4,7 +4,8 @@
  *
  * Copyright (c) 2025 He, Pengpeng
  *
- * Licensed under the MIT License. See LICENSE file in the project root for details.
+ * Licensed under the MIT License. See LICENSE file in the project root for
+ * details.
  */
 #include "DynamicThreadPool.h"
 #include <chrono>
@@ -16,8 +17,8 @@
 std::mutex logMutex; ///< 全局互斥锁，用于日志输出的同步
 
 int main() {
-  DynamicThreadPool pool(3);       // 创建线程池，包含3个线程
-  pool.setMaxQueueSize(10);        // 设置任务队列的最大大小为10
+  DynamicThreadPool pool(3); // 创建线程池，包含3个线程
+  pool.setMaxQueueSize(10);  // 设置任务队列的最大大小为10
   pool.setTaskThresholdAndScaling(5, 2); // 当任务数量超过5时，每次增加2个线程
 
   for (int i = 0; i < 20; ++i) { // 尝试添加20个任务

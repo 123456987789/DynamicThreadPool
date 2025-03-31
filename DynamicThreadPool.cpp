@@ -4,7 +4,8 @@
  *
  * Copyright (c) 2025 He, Pengpeng
  *
- * Licensed under the MIT License. See LICENSE file in the project root for details.
+ * Licensed under the MIT License. See LICENSE file in the project root for
+ * details.
  */
 #include "DynamicThreadPool.h"
 #include <iostream>
@@ -72,10 +73,13 @@ void DynamicThreadPool::addTask(const std::string &name,
     }
     taskQueue.push({name, func, arg});
 
-    if (taskThreshold > 0 && scalingFactor > 0 && taskQueue.size() > taskThreshold) {
+    if (taskThreshold > 0 && scalingFactor > 0 &&
+        taskQueue.size() > taskThreshold) {
       size_t maxThreads = std::thread::hardware_concurrency() / 2;
       size_t currentThreads = threads.size();
-      size_t newThreads = std::min(scalingFactor, maxThreads > currentThreads ? maxThreads - currentThreads : 0);
+      size_t newThreads = std::min(
+          scalingFactor,
+          maxThreads > currentThreads ? maxThreads - currentThreads : 0);
 
       for (size_t i = 0; i < newThreads; ++i) {
         threads.emplace_back(&DynamicThreadPool::workerThread, this);
