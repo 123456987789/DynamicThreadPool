@@ -1,16 +1,20 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -pthread -g -Wall -Wextra
-TARGET = main.exe
+OBJDIR = obj
+BINDIR = bin
+TARGET = $(BINDIR)/main.exe
 SRCS = main.cpp DynamicThreadPool.cpp
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
+	@mkdir -p $(BINDIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-%.o: %.cpp
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -rf $(OBJDIR) $(BINDIR)
