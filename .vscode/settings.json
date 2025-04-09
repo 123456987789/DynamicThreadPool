@@ -62,5 +62,25 @@
         "thread": "cpp"
     },
     "editor.fontSize": 15,
-    "terminal.integrated.fontSize": 15
+    "terminal.integrated.fontSize": 15,
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#7dadf2",
+        "activityBar.background": "#7dadf2",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#cb145f",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#7dadf2",
+        "statusBar.background": "#4e90ee",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#1f73ea",
+        "statusBarItem.remoteBackground": "#4e90ee",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#4e90ee",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#4e90ee99",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#4e90ee"
 }
